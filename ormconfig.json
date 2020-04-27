@@ -1,0 +1,23 @@
+{
+    "type": "mssql",
+    "host": "unahsergio.database.windows.net",
+    "port": 1433, 
+    "username":"ratonperez",
+    "password":"R@filo05",
+    "database":"Ingreso_vehiculos",
+    "options":{
+      "synchronize": true,
+      "logging": false,
+      "encrypt": true,
+      "enableArithAbort": true
+    },    
+    "entities": [
+       "src/entity/**/*.ts"
+    ],
+    "migrations": [
+       "src/migration/**/*.ts"
+    ],
+    "subscribers": [
+       "src/subscriber/**/*.ts"
+    ]
+ }
