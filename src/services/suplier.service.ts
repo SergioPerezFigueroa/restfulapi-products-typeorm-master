@@ -2,7 +2,7 @@ import {Request, Response} from "express";
 import {getConnection} from "typeorm";
 import {Supplier /*,ISupplier,IResult*/} from "../entity/suplier.entity";
 import { MessagePort } from "worker_threads";
-//import {ViewSuppliersByNProducts} from "../entity/supplierbynproducts.entity";
+import {ViewSuppliersByNProducts} from "../entity/supplierbynproducts.entity";
 
 export class SupplierService{
 
@@ -14,6 +14,12 @@ export class SupplierService{
     //video 15
     public async getOne(req: Request ,  res: Response){
         const supplier :Supplier[] = await getConnection().getRepository(Supplier).find({ where :{SupplierID: req.params.id } }); 
+        res.status(200).json(supplier[0]);
+    }
+
+    //VIDEO  16 
+    public async getOneSummary(req: Request, res: Response){
+        const supplier :ViewSuppliersByNProducts[] = await getConnection().getRepository(ViewSuppliersByNProducts).find({ where :{SupplierID: req.params.id } }); 
         res.status(200).json(supplier[0]);
     }
 
@@ -49,6 +55,7 @@ export class SupplierService{
     }
    
 
+    
    /* 
     public async getOne(req:Request, res: Response){
         const supplier: Supplier[] = await getConnection().getRepository(Supplier).find({ where: {SupplierID: req.params.id} });

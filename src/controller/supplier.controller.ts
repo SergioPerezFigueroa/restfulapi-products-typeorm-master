@@ -10,6 +10,10 @@ export class SupplierController{
     }
     private routes(){
 
+        this.app.route("/supplier/:id/summary")
+        .get(this.supplier_service.getOneSummary); 
+
+
         this.app.route("/supplier/:id")
         .get(this.supplier_service.getOne)
         .put(this.supplier_service.updateOne);
