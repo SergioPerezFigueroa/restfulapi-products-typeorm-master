@@ -17,7 +17,10 @@ export class SupplierController{
         this.app.route("/supplier/:id")
         .get(this.supplier_service.getOne)
         .put(this.supplier_service.updateOne);
-
+        
+        this.app.route ("/supplier")
+        .post(this.supplier_service.CreateOne)
+        
        /* this.app.route("/supplier/:id/summary")
         .get(this.supplier_service.getOneSummary);
 

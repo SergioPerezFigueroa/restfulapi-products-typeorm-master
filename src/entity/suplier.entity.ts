@@ -1,7 +1,7 @@
 import {Entity, Column, PrimaryColumn} from "typeorm";
 
 @Entity({schema:"example", database:"Ingreso_vehiculos", name:"Suppliers"})
-export class Supplier{
+export class Supplie{
    @PrimaryColumn()
     SupplierID :    number;
 
@@ -27,7 +27,7 @@ export class Supplier{
     Phone:          String;
 }
 
-/*
+
 export interface ISupplier{    
     SupplierID: number;
     SupplierName: string;
@@ -39,8 +39,8 @@ export interface ISupplier{
     Phone: string;
 }
 
+//manda el mensaje de encontro el resultado 
 export interface IResult{
     Successed: boolean;
     MSG: string
 }
-*/
